@@ -1,0 +1,13 @@
+{# todo replace text with product's datas #}
+
+<div class="card product-card">
+    <img src="https://via.placeholder.com/300.png'" class="card-img-top" alt="{{ product.name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <p class="card-text">{{ product.price }} €</p>
+        <a href="{{ path('products_show', {'id': product.id}) }}" class="btn btn-dark">{{ 'product_card.details' | trans }}</a>
+    </div>
+</div>

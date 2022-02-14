@@ -1,0 +1,11 @@
+{# todo replace text with review's datas #}
+
+<div class="card review-card">
+    <div class="card-body">
+        <h5 class="card-title">{{ 'review_card.author' | trans({'%author%' : review.author }) }}</h5>
+        <p class="card-text">{{ review.content }}</p>
+    </div>
+    <div class="card-footer d-flex">
+        {{ 'review_card.note' | trans({'%note%' : review.note}) }}
+    </div>
+</div>

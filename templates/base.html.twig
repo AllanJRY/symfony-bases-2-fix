@@ -9,8 +9,13 @@
             {{ encore_entry_link_tags('styles') }}
         {% endblock %}
     </head>
-    <body>
+    <body class="{% block body_class %}{% endblock %}">
+        {% block header %}
+            {% include 'partials/header.html.twig' %}
+        {% endblock %}
+
         {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('scripts') }}
