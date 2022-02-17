@@ -108,3 +108,26 @@ Enfin on peut enchainer avec le CartController qui affichera le contenu du panie
 Dans notre application on ne peut accéder à la page panier que si l'on est connecté, indice: une annotation/attribut is_granted est disponible pour les routes
 
 
+## Exercice 2 : Statistiques
+
+Nous allons afficher sur la page d'accueil de l'administration quelques statistiques de notre site.
+
+Pour rendre les requêtes un peu plus intéressantes, nous allons rajouter des dates sur nos entités :
+
+- Ajouter un champs postedAt sur l'entité Review
+- Ajouter un champs createdAt sur l'entité Product
+
+Pensez à mettre à jour vos CRUD et fixtures pour prendre en compte ces nouveaux champs
+
+Une fois cela fait, si vous n'en disposez pas déjà d'un, créez un HomeController pour l'administration.
+
+Tout le travail peut être fait dans sur la route `/`.
+
+Voici les requêtes de Repository personnalisées à implémenter et à afficher pour faire ces statistiques :
+
+1. Dans le `ProductRepository`, ajouter une méthode `findLastCreated()` qui renvoi les 3 derniers produits créés.
+2. Dans le `ReviewRepository`, ajouter une méthode `findLastPosted()` qui renvoi les 5 derniers avis postés.
+3. Dans le `UserRepository`, ajouter une méthode `findTopReviewers()`, qui renvoi les 3 utilisateurs ayant posté le plus de reviews.
+4. Dans le `ProductRepository`, ajouter une méthode `findTopReviewed()` qui renvoi les 3 produits les plus/mieux notés.
+5. Dans le `ReviewRepository`, ajouter une méthode `findAllWithWord(string $word)`, qui renvoi les reviews contenant le mot passé en paramètre.
+6. Dans le `ReviewRepository` ou le `ProductRepository`, ajouter une méthode `findReviewsBetweenDates(DateTime $startDate, DateTime $endDate)` qui renvoi les reviews/produits créés ou postées entre les deux dates passées en paramètre (dates de type DateTime !) 
